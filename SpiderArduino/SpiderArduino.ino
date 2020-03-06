@@ -120,6 +120,14 @@ void ListenPacketRoutine() {
       right();
     } else if (incomingPacket[0] == 's') {
       stop();
+    } else if (incomingPacket[0] == 'w') {
+      tiltfront();
+    } else if (incomingPacket[0] == 'x') {
+      tiltleft();
+    } else if (incomingPacket[0] == 'a') {
+      tiltleft();
+    } else if (incomingPacket[0] == 'd') {
+      tiltright();
     }
   }
 }
