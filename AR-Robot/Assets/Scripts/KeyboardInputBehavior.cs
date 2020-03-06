@@ -25,7 +25,23 @@ public class KeyboardInputBehavior : MonoBehaviour {
 
 			SendMessageBehavior.Instance.SendPacket ("r");
 
-		}
+		} else if (Input.GetKeyDown(KeyCode.W)) {
+
+			SendMessageBehavior.Instance.SendPacket("w");
+
+		} else if (Input.GetKeyDown (KeyCode.S)) {
+
+			SendMessageBehavior.Instance.SendPacket("x");
+
+		} else if (Input.GetKeyDown (KeyCode.A)) {
+
+			SendMessageBehavior.Instance.SendPacket("a");
+
+		} else if (Input.GetKeyDown (KeyCode.D)) {
+
+			SendMessageBehavior.Instance.SendPacket("d");
+
+		} 
 
 		if (Input.anyKey) {
 			

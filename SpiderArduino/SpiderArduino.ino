@@ -3,13 +3,8 @@
 #include <WiFiUdp.h>
 
 int incomingByte = 0;
-int enA = 16;//d0
 int in1 = 5;//d1
 int in2 = 4;//d2
-
-int speed = 300;//0 to 1023
-
-int enB = 14;//d5
 int in3 = 0;//d3
 int in4 = 2;//d4
 
@@ -40,8 +35,6 @@ void setup() {
   Serial.println("Starting UDP");
   Udp.begin(localUdpPort);
 
-  pinMode(enA, OUTPUT);
-  pinMode(enB, OUTPUT);
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
   pinMode(in3, OUTPUT);
@@ -51,49 +44,57 @@ void setup() {
 void left() {
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
-
-  analogWrite(enA, speed);
-
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
-
-  analogWrite(enB, speed);
 }
 
 void right() {
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-
-  analogWrite(enA, speed);
-
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
-
-  analogWrite(enB, speed);
 }
 
 void forward() {
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
-
-  analogWrite(enA, speed);
-
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
-
-  analogWrite(enB, speed);
 }
 
 void backward() {
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-
-  analogWrite(enA, speed);
-
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
+}
 
-  analogWrite(enB, speed);
+void tiltleft() {
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
+}
+
+void tiltright() {
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
+}
+
+void tiltfront() {
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+}
+
+void tiltback() {
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, HIGH);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
 }
 
 void stop() {
@@ -164,6 +165,38 @@ void ListenKeyboardRoutine() {
       {
         left();
         Serial.println("Rotate Left\n");
+        incomingByte = '*';
+      }
+      break;
+
+    case 'w':
+      {
+        tiltfront();
+        Serial.println("Tilt Front\n");
+        incomingByte = '*';
+      }
+      break;
+
+    case 'x':
+      {
+        tiltback();
+        Serial.println("Tilt Back\n");
+        incomingByte = '*';
+      }
+      break;  
+
+    case 'a':
+      {
+        tiltleft();
+        Serial.println("Tilt Left\n");
+        incomingByte = '*';
+      }
+      break;
+
+    case 'd':
+      {
+        tiltright();
+        Serial.println("Tilt Right\n");
         incomingByte = '*';
       }
       break;

@@ -47,18 +47,18 @@ void standstraight(){
   g15.exitWheelMode(F25);
   g15.exitWheelMode(F26);
 
-  setangle(A12,180);
-  setangle(A13,135);
-  setangle(B14,225);
-  setangle(B15,115);
-  setangle(C16,225);
-  setangle(C17,135);
-  setangle(D21,135);
-  setangle(D22,135);
-  setangle(E23,225);
-  setangle(E24,180);
-  setangle(F25,135);
-  setangle(F26,141);
+  setangle(A12,180,300);
+  setangle(A13,135,300);
+  setangle(B14,225,300);
+  setangle(B15,115,300);
+  setangle(C16,225,300);
+  setangle(C17,135,300);
+  setangle(D21,135,300);
+  setangle(D22,135,300);
+  setangle(E23,225,300);
+  setangle(E24,180,300);
+  setangle(F25,135,300);
+  setangle(F26,141,300);
   delay(1000);
 }
 
@@ -363,14 +363,134 @@ void turnright(){
   delay(200);
 }
 
+void tiltfront(){
+  g15.exitWheelMode(A12);
+  g15.exitWheelMode(A13);
+  g15.exitWheelMode(B14);
+  g15.exitWheelMode(B15);
+  g15.exitWheelMode(C16);
+  g15.exitWheelMode(C17);
+  g15.exitWheelMode(D21);
+  g15.exitWheelMode(D22);
+  g15.exitWheelMode(E23);
+  g15.exitWheelMode(E24);
+  g15.exitWheelMode(F25);
+  g15.exitWheelMode(F26);
+
+  //step 1
+  setangle(A12,180,800);
+  setangle(A13,135,800);
+  setangle(B14,180,800);
+  setangle(B15,77,800);
+  setangle(C16,180,800);
+  setangle(C17,135,800);
+  setangle(D21,90,800);
+  setangle(D22,76,800);
+  setangle(E23,225,800);
+  setangle(E24,180,800);
+  setangle(F25,85,800);
+  setangle(F26,135,800);
+  delay(200);
+}
+
+void tiltback(){
+  g15.exitWheelMode(A12);
+  g15.exitWheelMode(A13);
+  g15.exitWheelMode(B14);
+  g15.exitWheelMode(B15);
+  g15.exitWheelMode(C16);
+  g15.exitWheelMode(C17);
+  g15.exitWheelMode(D21);
+  g15.exitWheelMode(D22);
+  g15.exitWheelMode(E23);
+  g15.exitWheelMode(E24);
+  g15.exitWheelMode(F25);
+  g15.exitWheelMode(F26);
+
+  //step 1
+  setangle(A12,180,800);
+  setangle(A13,135,800);
+  setangle(B14,270,800);
+  setangle(B15,77,800);
+  setangle(C16,270,800);
+  setangle(C17,135,800);
+  setangle(D21,90,800);
+  setangle(D22,180,800);
+  setangle(E23,225,800);
+  setangle(E24,180,800);
+  setangle(F25,180,800);
+  setangle(F26,135,800);
+  delay(200);
+}
+
+void tiltleft(){
+  g15.exitWheelMode(A12);
+  g15.exitWheelMode(A13);
+  g15.exitWheelMode(B14);
+  g15.exitWheelMode(B15);
+  g15.exitWheelMode(C16);
+  g15.exitWheelMode(C17);
+  g15.exitWheelMode(D21);
+  g15.exitWheelMode(D22);
+  g15.exitWheelMode(E23);
+  g15.exitWheelMode(E24);
+  g15.exitWheelMode(F25);
+  g15.exitWheelMode(F26);
+
+  //step 1
+  setangle(A12,180,800);
+  setangle(A13,135,800);
+  setangle(B14,270,800);
+  setangle(B15,180,800);
+  setangle(C16,180,800);
+  setangle(C17,135,800);
+  setangle(D21,90,800);
+  setangle(D22,180,800);
+  setangle(E23,225,800);
+  setangle(E24,180,800);
+  setangle(F25,90,800);
+  setangle(F26,135,800);
+  delay(200);
+}
+
+void tiltright(){
+  g15.exitWheelMode(A12);
+  g15.exitWheelMode(A13);
+  g15.exitWheelMode(B14);
+  g15.exitWheelMode(B15);
+  g15.exitWheelMode(C16);
+  g15.exitWheelMode(C17);
+  g15.exitWheelMode(D21);
+  g15.exitWheelMode(D22);
+  g15.exitWheelMode(E23);
+  g15.exitWheelMode(E24);
+  g15.exitWheelMode(F25);
+  g15.exitWheelMode(F26);
+
+  //step 1
+  setangle(A12,180,800);
+  setangle(A13,135,800);
+  setangle(B14,180,800);
+  setangle(B15,90,800);
+  setangle(C16,270,800);
+  setangle(C17,135,800);
+  setangle(D21,180,800);
+  setangle(D22,90,800);
+  setangle(E23,225,800);
+  setangle(E24,180,800);
+  setangle(F25,180,800);
+  setangle(F26,135,800);
+  delay(200);
+}
+
 void turnangle(int start,int endd,double timee, int ID){
   double x = abs((((start-endd)/timee)/378)  * 1023);
   g15.setSpeed(ID,x);
   g15.setPosAngle(ID,endd);
 }
 
-void setangle(int ID,int start){
-  g15.setSpeed(ID, 100); // Set G15 (ID = 1) speed to 500,
+void setangle(int ID,int start, int speed){
+  g15.setSpeed(ID, speed); // Set G15 (ID = 1) speed to 500,
   g15.setPosAngle(ID, start);
 }
 
@@ -394,23 +514,20 @@ void loop() {
   else if (digitalRead(7)==HIGH && digitalRead(6)==LOW && digitalRead(5)==LOW && digitalRead(4)==HIGH) { //1001
     movebackward();
   }
+  else if (digitalRead(7)==HIGH && digitalRead(6)==LOW && digitalRead(5)==LOW && digitalRead(4)==LOW) { //1000
+    tiltleft();
+  }
+  else if (digitalRead(7)==LOW && digitalRead(6)==HIGH && digitalRead(5)==LOW && digitalRead(4)==LOW) { //0100
+    tiltright();
+  }
+  else if (digitalRead(7)==LOW && digitalRead(6)==LOW && digitalRead(5)==HIGH && digitalRead(4)==LOW) { //0010
+    tiltfront();
+  }
+  else if (digitalRead(7)==HIGH && digitalRead(6)==HIGH && digitalRead(5)==HIGH && digitalRead(4)==LOW) { //1110
+    tiltback();
+  }
   else {
     standstraight();
   }
-  /*
-  else if (digitalRead(7)==LOW && digitalRead(6)==HIGH && digitalRead(5)==LOW && digitalRead(4)==HIGH) { //0101
-    excavate();
-  }
-  else if (digitalRead(7)==LOW && digitalRead(6)==HIGH && digitalRead(5)==HIGH && digitalRead(4)==LOW) { //0110
-    shake();
-  }
-  else if (digitalRead(7)==HIGH && digitalRead(6)==LOW && digitalRead(5)==LOW && digitalRead(4)==HIGH) { //0111
-    pullup(500,10);
-  }
-  else if (digitalRead(7)==HIGH && digitalRead(6)==LOW && digitalRead(5)==HIGH && digitalRead(4)==LOW) { //0111
-    pulldown(500,10);
-  }
-  */
-  //excavate();
   
 }
