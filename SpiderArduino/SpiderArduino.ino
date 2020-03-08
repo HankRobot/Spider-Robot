@@ -11,6 +11,9 @@ int in4 = 2;//d4
 //wifi stuff
 const char* ssid     = "HankBot"; // wifi network name
 const char* password = "56111899"; // wifi network password
+IPAddress ip(192, 168, 137, 20); //set static ip 192.168.137.20
+IPAddress gateway(192, 168, 137, 1); //set getteway
+IPAddress subnet(255, 255, 255, 0);//set subnet
 
 WiFiUDP Udp;
 unsigned int localUdpPort = 1998;
@@ -24,6 +27,7 @@ void setup() {
   // We start by connecting to a WiFi network
   Serial.print("Connecting to ");
   Serial.println(ssid);
+  WiFi.config(ip, gateway, subnet);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -123,7 +127,7 @@ void ListenPacketRoutine() {
     } else if (incomingPacket[0] == 'w') {
       tiltfront();
     } else if (incomingPacket[0] == 'x') {
-      tiltleft();
+      tiltback();
     } else if (incomingPacket[0] == 'a') {
       tiltleft();
     } else if (incomingPacket[0] == 'd') {
