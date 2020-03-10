@@ -15,9 +15,11 @@ public class Server : MonoBehaviour
     public bool enableLog = false;
 
     private Texture2D currentTexture;
+    
     private TcpListener listner;
     private const int port = 1999;
     private bool stop = false;
+
 
     private List<TcpClient> clients = new List<TcpClient>();
 
@@ -33,23 +35,26 @@ public class Server : MonoBehaviour
 
 
     //Converts the data size to byte array and put result to the fullBytes array
+    private byte[] bytesToSendCount;
     void byteLengthToFrameByteArray(int byteLength, byte[] fullBytes)
     {
         //Clear old data
         Array.Clear(fullBytes, 0, fullBytes.Length);
         //Convert int to bytes
-        byte[] bytesToSendCount = BitConverter.GetBytes(byteLength);
+        bytesToSendCount = BitConverter.GetBytes(byteLength);
         //Copy result to fullBytes
         bytesToSendCount.CopyTo(fullBytes, 0);
     }
 
     //Converts the byte array to the data size and returns the result
+    private int byteLength;
+
     int frameByteArrayToByteLength(byte[] frameBytesLength)
     {
-        int byteLength = BitConverter.ToInt32(frameBytesLength, 0);
+        byteLength = BitConverter.ToInt32(frameBytesLength, 0);
         return byteLength;
     }
-
+    
     IEnumerator initAndWaitForCamImage()
     {
         // Connect to the server
@@ -61,34 +66,39 @@ public class Server : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
         }
+
         currentTexture = new Texture2D(cameraFeed.getWidth(), cameraFeed.getHeight());
+        currentTexture.hideFlags = HideFlags.HideAndDontSave;
         Debug.Log("got Cam Image");
         //Start sending coroutine
         StartCoroutine(senderCOR());
     }
-
+    
     WaitForEndOfFrame endOfFrame = new WaitForEndOfFrame();
+    private byte[] pngBytes;
+    byte[] frameBytesLength;
     IEnumerator senderCOR()
     {
-
         bool isConnected = false;
         TcpClient client = null;
         NetworkStream stream = null;
-
         // Wait for client to connect in another Thread 
         Loom.RunAsync(() => {
-            while (client == null)
+            while (!stop)
             {
-                Debug.Log("Listening...");
-                // Wait for client connection
-                client = listner.AcceptTcpClient();
-                if (client != null)
+                while (client == null)
                 {
-                    // We are connected
-                    clients.Add(client);
+                    Debug.Log("Listening...");
+                    // Wait for client connection
+                    client = listner.AcceptTcpClient();
+                    if (client != null)
+                    {
+                        // We are connected
+                        clients.Add(client);
 
-                    isConnected = true;
-                    stream = client.GetStream();
+                        isConnected = true;
+                        stream = client.GetStream();
+                    }
                 }
             }
         });
@@ -103,17 +113,18 @@ public class Server : MonoBehaviour
 
         bool readyToGetFrame = true;
 
-        byte[] frameBytesLength = new byte[SEND_RECEIVE_COUNT];
+        frameBytesLength = new byte[SEND_RECEIVE_COUNT];
 
         while (!stop)
         {
             //Wait for End of frame
             yield return endOfFrame;
             currentTexture.SetPixels(cameraFeed.GetImage().GetPixels());
-            byte[] pngBytes = currentTexture.EncodeToJPG(10);
+            pngBytes = currentTexture.EncodeToJPG(10);
             //Fill total byte length to send. Result is stored in frameBytesLength
             byteLengthToFrameByteArray(pngBytes.Length, frameBytesLength);
-
+            Resources.UnloadAsset(currentTexture);
+            Resources.UnloadUnusedAssets();
             //Set readyToGetFrame false
             readyToGetFrame = false;
 
@@ -128,6 +139,9 @@ public class Server : MonoBehaviour
 
                 //Sent. Set readyToGetFrame true
                 readyToGetFrame = true;
+                stream.Flush();
+                Resources.UnloadAsset(currentTexture);
+                Resources.UnloadUnusedAssets();
             });
 
             //Wait until we are ready to get new frame(Until we are done sending data)
@@ -138,7 +152,6 @@ public class Server : MonoBehaviour
             }
         }
     }
-
 
     void LOG(string messsage)
     {

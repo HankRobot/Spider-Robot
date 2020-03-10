@@ -31,7 +31,7 @@ public class SendMessageBehavior : MonoBehaviour {
 	}
 
 	void OnDisable () {
-		CloseSocket ();
+		//CloseSocket ();
 	}
 
 	void InitSocket () {
@@ -39,6 +39,7 @@ public class SendMessageBehavior : MonoBehaviour {
 		CloseSocket ();
 		//init socket
 		sock = new Socket (AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+		sock.EnableBroadcast = true;
 		serverAddr = IPAddress.Parse (serverIP);
 		print (serverAddr);
 		endPoint = new IPEndPoint (serverAddr, PORT_NUM);
@@ -48,6 +49,14 @@ public class SendMessageBehavior : MonoBehaviour {
 		if (sock != null) {
 			StopAllCoroutines ();
 			sock.Disconnect (true);
+			try
+			{
+				sock.Shutdown(SocketShutdown.Both);
+			}
+			finally
+			{
+				sock.Close();
+			}
 		}
 	}
 

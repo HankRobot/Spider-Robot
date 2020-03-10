@@ -100,8 +100,9 @@ public class CameraFeed : MonoBehaviour {
 		mFormatRegistered = false;
 	}
 
+	Texture2D camTex;
 	public Texture2D GetImage () {
-		Texture2D camTex = new Texture2D (image.Width, image.Height);
+		camTex = new Texture2D (image.Width, image.Height);
 		image.CopyToTexture (camTex);	
 		return camTex;
 	}
