@@ -29,10 +29,21 @@ public class Server : MonoBehaviour
     private void OnEnable()
     {
         Application.runInBackground = true;
+        Application.lowMemory += OnLowMemory;
         //Start WebCam coroutine
         StartCoroutine(initAndWaitForCamImage());
     }
 
+    private void OnLowMemory()
+    {
+        // release all cached textures
+        currentTexture = new Texture2D(cameraFeed.getWidth(), cameraFeed.getHeight());
+        Array.Clear(pngBytes, 0, pngBytes.Length);
+        Array.Clear(frameBytesLength, 0, frameBytesLength.Length);
+        Resources.UnloadAsset(currentTexture);
+        Resources.UnloadAsset(cameraFeed);
+        Resources.UnloadUnusedAssets();
+    }
 
     //Converts the data size to byte array and put result to the fullBytes array
     private byte[] bytesToSendCount;
@@ -76,7 +87,7 @@ public class Server : MonoBehaviour
     
     WaitForEndOfFrame endOfFrame = new WaitForEndOfFrame();
     private byte[] pngBytes;
-    byte[] frameBytesLength;
+    byte[] frameBytesLength = new byte[SEND_RECEIVE_COUNT];
     IEnumerator senderCOR()
     {
         bool isConnected = false;
@@ -99,6 +110,7 @@ public class Server : MonoBehaviour
                         isConnected = true;
                         stream = client.GetStream();
                     }
+                    Resources.UnloadUnusedAssets();
                 }
             }
         });
@@ -113,7 +125,7 @@ public class Server : MonoBehaviour
 
         bool readyToGetFrame = true;
 
-        frameBytesLength = new byte[SEND_RECEIVE_COUNT];
+        //frameBytesLength = new byte[SEND_RECEIVE_COUNT];
 
         while (!stop)
         {
@@ -124,6 +136,7 @@ public class Server : MonoBehaviour
             //Fill total byte length to send. Result is stored in frameBytesLength
             byteLengthToFrameByteArray(pngBytes.Length, frameBytesLength);
             Resources.UnloadAsset(currentTexture);
+            Resources.UnloadAsset(cameraFeed);
             Resources.UnloadUnusedAssets();
             //Set readyToGetFrame false
             readyToGetFrame = false;
@@ -139,8 +152,11 @@ public class Server : MonoBehaviour
 
                 //Sent. Set readyToGetFrame true
                 readyToGetFrame = true;
-                stream.Flush();
+                
                 Resources.UnloadAsset(currentTexture);
+                Resources.UnloadAsset(cameraFeed);
+                Array.Clear(pngBytes, 0, pngBytes.Length);
+                Array.Clear(frameBytesLength, 0, frameBytesLength.Length);
                 Resources.UnloadUnusedAssets();
             });
 

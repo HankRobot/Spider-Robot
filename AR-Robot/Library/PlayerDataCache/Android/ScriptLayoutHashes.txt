@@ -71,8 +71,6 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.VideoTrackableEventHandler
 00de963d957d90979dd1b21dcac2c325 Assembly-CSharp.dll:UnityEngine.XR.iOS.UnityARHitTestExample
 b31ef1c110c5a7ed74ad67be3ae59038 Unity.TextMeshPro.dll:TMPro.TMP_InputField
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 649dddd003fb3b1472517ebb21b5a8af Assembly-CSharp.dll:.ColorLabel
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
