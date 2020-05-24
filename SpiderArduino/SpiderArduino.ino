@@ -7,7 +7,7 @@ int in1 = 5;//d1
 int in2 = 4;//d2
 int in3 = 0;//d3
 int in4 = 2;//d4
-
+int wifiled = 16;
 //wifi stuff
 const char* ssid     = "HankBot"; // wifi network name
 const char* password = "56111899"; // wifi network password
@@ -20,6 +20,12 @@ unsigned int localUdpPort = 1998;
 char incomingPacket[255];
 
 void setup() {
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  pinMode(wifiled, OUTPUT);
+
   Serial.begin(115200);
   delay(10);
   Serial.println("Motor test!");
@@ -38,11 +44,8 @@ void setup() {
   Serial.println(WiFi.localIP());
   Serial.println("Starting UDP");
   Udp.begin(localUdpPort);
-
-  pinMode(in1, OUTPUT);
-  pinMode(in2, OUTPUT);
-  pinMode(in3, OUTPUT);
-  pinMode(in4, OUTPUT);
+  digitalWrite(wifiled,HIGH);
+  
 }
 
 void left() {
@@ -213,6 +216,27 @@ void ListenKeyboardRoutine() {
       }
       break;
   }
+}
+
+void test(){
+  left();
+  delay(1000);
+  right();
+  delay(1000);
+  forward();
+  delay(1000);
+  backward();
+  delay(1000);
+  tiltleft();
+  delay(1000);
+  tiltright();
+  delay(1000);
+  tiltfront();
+  delay(1000);
+  tiltback();
+  delay(1000);
+  stop();
+  delay(1000);
 }
 
 void loop()
