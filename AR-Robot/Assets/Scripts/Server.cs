@@ -65,7 +65,6 @@ public class Server : MonoBehaviour
         byteLength = BitConverter.ToInt32(frameBytesLength, 0);
         return byteLength;
     }
-    
     IEnumerator initAndWaitForCamImage()
     {
         // Connect to the server

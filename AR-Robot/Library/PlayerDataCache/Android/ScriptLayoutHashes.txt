@@ -30,6 +30,7 @@ deaaf7f8c5db9bcdd252b5123ee606e5 Assembly-CSharp.dll:.ModeSwitcher
 172cfdd977ca8a6f32932932c2f0d2ee Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.ImageEffectBase
 c150d9404e6b53770dd5f5e91004bccd Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.BlurOptimized
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
+2b15a62e894558344c2d5210a53ea328 Assembly-CSharp.dll:.microphoneclient
 cefc42c2cb25819ed10824bfe940c3dc Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.GlobalFog
 a5e44188ccd983bb228b74d4b7419ecf Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.ContrastStretch
 b2119094b0083707a0b6ff356d4a1f66 Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.VignetteAndChromaticAberration
@@ -152,6 +153,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.VuMarkHandler
 85428ea7eb8266da49cda56636ead2fe Assembly-CSharp.dll:.UDTMessageBehavior
 e9f2e0bbf55e2dd4c3da63569760821f Assembly-CSharp.dll:.ARReferenceImagesSet
+16ea86e187a142e2446e5583da2e71d4 Assembly-CSharp.dll:.microphoneserver
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 122d7ffab68b4eedc72a1fce03e63c2f Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.BloomOptimized
@@ -319,6 +321,7 @@ f080a86a4a939dd08c0cc4f4f05e1e4e Assembly-CSharp-firstpass.dll:UnityStandardAsse
 172cfdd977ca8a6f32932932c2f0d2ee Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.SepiaTone
 3bd301965190e77c3822602bd15d95bb Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.Twirl
 3bd301965190e77c3822602bd15d95bb Assembly-CSharp-firstpass.dll:UnityStandardAssets.ImageEffects.Vortex
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.microphonesync
 dfcd0b48be5cba37d5ad4ee2e02bd936 Assembly-CSharp.dll:.ModelSwap
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.KeyboardInputBehavior
 bfacedbd2d0a7ae7ec6cb5689bcd2e8f Assembly-CSharp.dll:.VideoFormatButton

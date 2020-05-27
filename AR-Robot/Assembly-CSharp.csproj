@@ -64,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Common\Scripts\TrackableSettings.cs" />
+    <Compile Include="Assets\microphoneclient.cs" />
+    <Compile Include="Assets\microphoneserver.cs" />
+    <Compile Include="Assets\microphonesync.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Astronaut.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Augmentation.cs" />
     <Compile Include="Assets\SamplesResources\AugmentationAssets\Scripts\Augmentations\Drone.cs" />

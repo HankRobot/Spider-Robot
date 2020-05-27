@@ -18,15 +18,17 @@ public class test : MonoBehaviour
         if (Microphone.devices.Length > 0)
         {
             var audio = GetComponent<AudioSource>();
-            audio.clip = Microphone.Start(Microphone.devices[0], true, 10, 44100);
+            var audio2 = GetComponent<AudioSource>();
+            audio.clip = Microphone.Start(Microphone.devices[0], true, 10, 5000);
             audio.loop = true;
-            float[] f = new float[audio.clip.samples * audio.clip.channels];
-            audio.clip.SetData(f,0);
- 
-            //AudioClip audioClip = AudioClip.Create("testSound", f.Length, 1, 44100, false, false);
-            audio.clip.GetData(f, 0);
+            byte[] bytedata = new byte[audio.clip.samples * audio.clip.channels];
+            //send
+
+            //retrieve
+            float[] f = ConvertByteToFloat(bytedata);
+            audio2.clip.GetData(f, 0);
             while (!(Microphone.GetPosition(null) > 0)) {}
-            audio.Play();
+            audio2.Play();
         }   
     }
 
@@ -42,41 +44,8 @@ public class test : MonoBehaviour
         return floatArr;
     }
 
-
-    
-
     // Update is called once per frame
     void Update()
-    {/*
-        //get mic volume
-        int dec = 128;
-        float[] waveData = new float[dec];
-        int micPosition = Microphone.GetPosition(null) - (dec + 1); // null means the first microphone
-        microphoneInput.GetData(waveData, micPosition);
-        //var audio = GetComponent<AudioSource>();
-       
-        
-        // Getting a peak on the last 128 samples
-        float levelMax = 0;
-        for (int i = 0; i < dec; i++)
-        {
-            float wavePeak = waveData[i] * waveData[i];
-            if (levelMax < wavePeak)
-            {
-                levelMax = wavePeak;
-            }
-        }
-        float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
-
-        if (level > sensitivity && !flapped)
-        {
-            Flap();
-            flapped = true;
-        }
-        if (level < sensitivity && flapped)
-        {
-            flapped = false;
-        }
-        */
+    {
     }
 }
