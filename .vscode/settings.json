@@ -1,5 +1,16 @@
 {
     "files.associations": {
-        "ios": "cpp"
+        "ios": "cpp",
+        "xlocale": "cpp",
+        "array": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "string": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "xhash": "cpp",
+        "unordered_map": "cpp"
     }
 }
