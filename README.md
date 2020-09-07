@@ -17,4 +17,5 @@ A spider-similar locomotion robot with video feed to scare my lecturers
 # Folder SpiderArduino
 - [x] ESP8266 device to receive commands from desktop app via UDP
 
-
+# Improvements
+- [x] Matthew Hallberg's code always crashes on my android phone due to object buildup, hence GC is implemented to avoid crashing.
