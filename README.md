@@ -3,6 +3,9 @@ A spider-similar locomotion robot with video feed to scare my lecturers
 
 <div align="center">
 <img src="https://media.giphy.com/media/fU43JVDDEdu4ARzo8f/giphy-downsized-large.gif">
+</div>
+
+<div align="center">
 <img src="https://media.giphy.com/media/WoLfqP0OIcKF6yRo66/giphy-downsized-large.gif">
 </div>
 
