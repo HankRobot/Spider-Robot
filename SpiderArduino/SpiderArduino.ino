@@ -1,18 +1,17 @@
-#include <SoftwareSerial.h>
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <WiFiUdp.h>
 
 int incomingByte = 0;
-int in1 = 5;//d1
-int in2 = 4;//d2
-int in3 = 0;//d3
-int in4 = 2;//d4
-int wifiled = 16;
+int in1 = 26;//d1
+int in2 = 25;//d2
+int in3 = 17;//d3
+int in4 = 16;//d4
+int wifiled = 27;
 //wifi stuff
 const char* ssid     = "HankBot"; // wifi network name
 const char* password = "56111899"; // wifi network password
 IPAddress ip(192, 168, 137, 20); //set static ip 192.168.137.20
-IPAddress gateway(192, 168, 137, 1); //set getteway
+IPAddress gateway(192, 168, 137, 1); //set getteway....
 IPAddress subnet(255, 255, 255, 0);//set subnet
 
 WiFiUDP Udp;
