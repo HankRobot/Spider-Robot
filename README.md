@@ -3,14 +3,8 @@ A spider-similar locomotion robot with video feed to scare my lecturers
 
 <div align="center">
 <img src="https://media.giphy.com/media/fU43JVDDEdu4ARzo8f/giphy-downsized-large.gif">
-<<<<<<< HEAD
-</div>
-
-![](name-of-giphy.gif)
-=======
 <img src="https://github.com/HankRobot/Spider-Robot/blob/master/spider_robot.gif">
 </div>
->>>>>>> 1a0606e35768eb293bda48bf59da1dad4962f9d0
 
 # Project Description
 1. Using a few codes from Matthew Hallberg's streaming code (https://youtu.be/4X_EjUZp2c0), the smartphone is attached on a 6 legged spider robot to stream videos to a desktop app, desktop app in turns gives commands to ESP8266 device, in turn which the device does a 2^4 combination of led pinouts to control the CT-Uno G15 shield spider-robot.
