@@ -1,7 +1,6 @@
 {
-    "board": "esp32:esp32:esp32",
+    "board": "arduino:avr:uno",
     "port": "COM5",
     "programmer": "AVR ISP",
-    "sketch": "ControlSpider/ControlSpider.ino",
-    "configuration": "PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none"
+    "sketch": "ControlSpider/ControlSpider.ino"
 }
