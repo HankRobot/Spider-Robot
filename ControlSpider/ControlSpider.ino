@@ -195,88 +195,88 @@ void moveforward(){
 
 void movebackward(){
   //step 1
-  turnangle(200,200,0.5,A12);
-  turnangle(115,115,0.5,A13);
-  turnangle(180,120,0.5,B14);
-  turnangle(180,240,0.5,B15);
-  turnangle(120,180,0.5,C16);
-  turnangle(155,155,0.5,C17);
-  turnangle(240,180,0.5,D21);
-  turnangle(240,180,0.5,D22);
-  turnangle(215,215,0.5,E23);
-  turnangle(200,200,0.5,E24);
-  turnangle(180,240,0.5,F25);
-  turnangle(155,155,0.5,F26);
-  turnangle(108,130,0.5,A1);
-  turnangle(130,130,0.5,B2);
-  turnangle(108,130,0.5,C3);
-  turnangle(130,108,0.5,D4);
-  turnangle(108,130,0.5,E5);
-  turnangle(130,108,0.5,F6);
-  delay(500);
+  turnangle(200,200,0.3,A12);
+  turnangle(115,115,0.3,A13);
+  turnangle(180,120,0.3,B14);
+  turnangle(180,240,0.3,B15);
+  turnangle(120,180,0.3,C16);
+  turnangle(155,155,0.3,C17);
+  turnangle(240,180,0.3,D21);
+  turnangle(240,180,0.3,D22);
+  turnangle(215,215,0.3,E23);
+  turnangle(200,200,0.3,E24);
+  turnangle(180,240,0.3,F25);
+  turnangle(155,155,0.3,F26);
+  turnangle(108,130,0.3,A1);
+  turnangle(130,130,0.3,B2);
+  turnangle(108,130,0.3,C3);
+  turnangle(130,108,0.3,D4);
+  turnangle(108,130,0.3,E5);
+  turnangle(130,108,0.3,F6);
+  delay(300);
 
   //step 2
-  turnangle(200,160,0.3,A12);
-  turnangle(115,155,0.3,A13);
-  turnangle(120,120,0.3,B14);
-  turnangle(240,240,0.3,B15);
-  turnangle(180,180,0.3,C16);
-  turnangle(155,115,0.3,C17);
-  turnangle(180,180,0.3,D21);
-  turnangle(180,180,0.3,D22);
-  turnangle(215,255,0.3,E23);
-  turnangle(200,160,0.3,E24);
-  turnangle(240,240,0.3,F25);
-  turnangle(155,115,0.3,F26);
-  turnangle(130,130,0.3,A1);
-  turnangle(130,108,0.3,B2);
-  turnangle(130,130,0.3,C3);
-  turnangle(108,108,0.3,D4);
-  turnangle(130,130,0.3,E5);
-  turnangle(108,108,0.3,F6);
-  delay(300);
-
-  //step 3
-  turnangle(160,160,0.5,A12);
-  turnangle(155,155,0.5,A13);
-  turnangle(120,180,0.5,B14);
-  turnangle(240,180,0.5,B15);
-  turnangle(180,120,0.5,C16);
-  turnangle(115,115,0.5,C17);
-  turnangle(180,240,0.5,D21);
-  turnangle(180,240,0.5,D22);
-  turnangle(255,255,0.5,E23);
-  turnangle(160,160,0.5,E24);
-  turnangle(240,180,0.5,F25);
-  turnangle(115,115,0.5,F26);
-  turnangle(130,108,0.5,A1);
-  turnangle(108,130,0.5,B2);
+  turnangle(200,160,0.5,A12);
+  turnangle(115,155,0.5,A13);
+  turnangle(120,120,0.5,B14);
+  turnangle(240,240,0.5,B15);
+  turnangle(180,180,0.5,C16);
+  turnangle(155,115,0.5,C17);
+  turnangle(180,180,0.5,D21);
+  turnangle(180,180,0.5,D22);
+  turnangle(215,255,0.5,E23);
+  turnangle(200,160,0.5,E24);
+  turnangle(240,240,0.5,F25);
+  turnangle(155,115,0.5,F26);
+  turnangle(130,130,0.5,A1);
+  turnangle(130,108,0.5,B2);
   turnangle(130,130,0.5,C3);
-  turnangle(108,130,0.5,D4);
-  turnangle(130,108,0.5,E5);
-  turnangle(108,130,0.5,F6);
+  turnangle(108,108,0.5,D4);
+  turnangle(130,130,0.5,E5);
+  turnangle(108,108,0.5,F6);
   delay(500);
 
-  //step 4
-  turnangle(160,200,0.3,A12);
-  turnangle(155,115,0.3,A13);
-  turnangle(180,180,0.3,B14);
-  turnangle(180,180,0.3,B15);
-  turnangle(120,120,0.3,C16);
-  turnangle(115,155,0.3,C17);
-  turnangle(240,240,0.3,D21);
-  turnangle(240,240,0.3,D22);
-  turnangle(255,215,0.3,E23);
-  turnangle(160,200,0.3,E24);
-  turnangle(180,180,0.3,F25);
-  turnangle(115,155,0.3,F26);
-  turnangle(108,108,0.3,A1);
-  turnangle(130,130,0.3,B2);
-  turnangle(130,108,0.3,C3);
-  turnangle(130,130,0.3,D4);
-  turnangle(108,108,0.3,E5);
-  turnangle(130,130,0.3,F6);
+  //step 3
+  turnangle(160,160,0.3,A12);
+  turnangle(155,155,0.3,A13);
+  turnangle(120,180,0.3,B14);
+  turnangle(240,180,0.3,B15);
+  turnangle(180,120,0.3,C16);
+  turnangle(115,115,0.3,C17);
+  turnangle(180,240,0.3,D21);
+  turnangle(180,240,0.3,D22);
+  turnangle(255,255,0.3,E23);
+  turnangle(160,160,0.3,E24);
+  turnangle(240,180,0.3,F25);
+  turnangle(115,115,0.3,F26);
+  turnangle(130,108,0.3,A1);
+  turnangle(108,130,0.3,B2);
+  turnangle(130,130,0.3,C3);
+  turnangle(108,130,0.3,D4);
+  turnangle(130,108,0.3,E5);
+  turnangle(108,130,0.3,F6);
   delay(300);
+
+  //step 4
+  turnangle(160,200,0.5,A12);
+  turnangle(155,115,0.5,A13);
+  turnangle(180,180,0.5,B14);
+  turnangle(180,180,0.5,B15);
+  turnangle(120,120,0.5,C16);
+  turnangle(115,155,0.5,C17);
+  turnangle(240,240,0.5,D21);
+  turnangle(240,240,0.5,D22);
+  turnangle(255,215,0.5,E23);
+  turnangle(160,200,0.5,E24);
+  turnangle(180,180,0.5,F25);
+  turnangle(115,155,0.5,F26);
+  turnangle(108,108,0.5,A1);
+  turnangle(130,130,0.5,B2);
+  turnangle(130,108,0.5,C3);
+  turnangle(130,130,0.5,D4);
+  turnangle(108,108,0.5,E5);
+  turnangle(130,130,0.5,F6);
+  delay(500);
 }
 
 void turnleft(){
@@ -527,8 +527,15 @@ void tiltright(){
 
 void turnangle(int start,int endd,double timee, int ID){
   double x = abs((((start-endd)/timee)/360)  * 1088);
-  g15.setSpeed(ID,x);
-  g15.setPosAngle(ID,endd);
+  if (x == 0)
+  {
+    g15.setPosAngle(ID,endd);
+  }
+  else
+  {
+    g15.setSpeed(ID,x);
+    g15.setPosAngle(ID,endd);
+  }
 }
 
 void setangle(int ID,int start, int speed){
@@ -569,17 +576,19 @@ int readangle(int motorid){
   delay(200);
 }
 
+void test(){
+  moveforward();
+  moveforward();
+  movebackward();
+  movebackward();
+  turnleft();
+  turnleft();
+  turnright();
+  turnright();
+}
+
 void loop() {
-  
-  moveforward();
-  moveforward();
-  movebackward();
-  movebackward();
-  turnleft();
-  turnleft();
-  turnright();
-  turnright();
-  /*
+  //test();
   if (digitalRead(7)==LOW && digitalRead(6)==HIGH && digitalRead(5)==LOW && digitalRead(4)==HIGH) { //0101
     turnleft();
   }
@@ -607,5 +616,4 @@ void loop() {
   else {
     standstraight();
   }
-  */
 }
