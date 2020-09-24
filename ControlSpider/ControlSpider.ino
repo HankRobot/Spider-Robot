@@ -107,7 +107,7 @@ void standstraight(){
 }
 
 //robot moves forward
-void moveforward(){
+void movebackward(){
   //step 1
   turnangle(200,160,0.5,A12);
   turnangle(115,155,0.5,A13);
@@ -193,7 +193,7 @@ void moveforward(){
   delay(300);
 }
 
-void movebackward(){
+void moveforward(){
   //step 1
   turnangle(200,200,0.3,A12);
   turnangle(115,115,0.3,A13);
@@ -279,7 +279,7 @@ void movebackward(){
   delay(500);
 }
 
-void turnleft(){
+void turnright(){
 
   //step 1
   turnangle(225,180,0.5,A12);
@@ -366,7 +366,7 @@ void turnleft(){
   delay(500);
 }
 
-void turnright(){
+void turnleft(){
 
   //step 1
   turnangle(225,225,0.5,A12);
