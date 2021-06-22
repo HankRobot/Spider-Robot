@@ -1,5 +1,5 @@
 # Spider-Robot
-A spider-similar locomotion robot with video feed to scare my lecturers
+A spider-similar locomotion robot with video feed to scare my lecturers.
 
 <div align="center">
 <img src="https://media.giphy.com/media/fU43JVDDEdu4ARzo8f/giphy-downsized-large.gif">
